@@ -16,14 +16,18 @@ class ChooseLimitViewController: UIViewController {
     // MARK: - Properties
     private var currentLimit: Double?
     
+    // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setups UI
         self.setupUI()
         self.setupData()
     }
-
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loginIfNecessary()
+    }
 }
 
 // MARK: - Actions
@@ -83,4 +87,11 @@ extension ChooseLimitViewController {
             self.dailyLimitField.text = String(unwrappedLimit / Double(Calendar.daysInCurrentMonth()))
         }
     }
+    
+    private func loginIfNecessary() {
+        if !NubankServices.IsValidSession() {
+            self.performSegue(withIdentifier: "showLoginViewSegue", sender: nil)
+        }
+    }
+    
 }
