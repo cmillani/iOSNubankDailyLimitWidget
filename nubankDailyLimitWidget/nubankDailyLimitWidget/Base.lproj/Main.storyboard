@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Choose Limit View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ChooseLimitViewController" customModule="nubankDailyLimitWidget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o35-f9-9mo">
+                                <rect key="frame" x="0.0" y="296" width="375" height="95"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Limite Mensal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zkU-ht-qZn">
+                                        <rect key="frame" x="30" y="10" width="315" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Limite Diário (Mês Atual)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPa-8Q-7ay">
+                                        <rect key="frame" x="30" y="55" width="315" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="zkU-ht-qZn" firstAttribute="leading" secondItem="o35-f9-9mo" secondAttribute="leading" constant="30" id="48x-GE-2Ge"/>
+                                    <constraint firstItem="XPa-8Q-7ay" firstAttribute="leading" secondItem="o35-f9-9mo" secondAttribute="leading" constant="30" id="DaX-iS-zVh"/>
+                                    <constraint firstAttribute="trailing" secondItem="XPa-8Q-7ay" secondAttribute="trailing" constant="30" id="Kzx-Q1-5Wi"/>
+                                    <constraint firstItem="XPa-8Q-7ay" firstAttribute="top" secondItem="zkU-ht-qZn" secondAttribute="bottom" constant="15" id="NaY-Gf-jBe"/>
+                                    <constraint firstAttribute="trailing" secondItem="zkU-ht-qZn" secondAttribute="trailing" constant="30" id="lCY-gP-gGB"/>
+                                    <constraint firstItem="zkU-ht-qZn" firstAttribute="top" secondItem="o35-f9-9mo" secondAttribute="top" constant="10" id="pXV-nR-02M"/>
+                                    <constraint firstAttribute="bottom" secondItem="XPa-8Q-7ay" secondAttribute="bottom" constant="10" id="t5b-qA-7Eq"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planejador Nubank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiR-H5-Ccb">
+                                <rect key="frame" x="81.5" y="90" width="212" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tiR-H5-Ccb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="Dtt-kY-lrg"/>
+                            <constraint firstItem="o35-f9-9mo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R4l-K7-pN7"/>
+                            <constraint firstItem="o35-f9-9mo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gb4-1k-Kf3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o35-f9-9mo" secondAttribute="trailing" id="j9m-2o-zbC"/>
+                            <constraint firstItem="tiR-H5-Ccb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mNC-eY-IBC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="dailyLimitField" destination="XPa-8Q-7ay" id="0Nv-2K-d1y"/>
+                        <outlet property="monthlyLimitField" destination="zkU-ht-qZn" id="TKg-gm-1ai"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
