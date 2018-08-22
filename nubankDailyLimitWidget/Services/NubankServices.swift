@@ -18,9 +18,10 @@ class NubankServices {
     /// - Returns: true if there is a valid session within the app
     static func IsValidSession() -> Bool {
         // Creates keychain query
-        let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
+        let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
                                     kSecMatchLimit as String: kSecMatchLimitOne,
                                     kSecReturnAttributes as String: true,
+                                    kSecAttrPath as String: Constants.Keychain.discoveryPathAttribute,
                                     kSecReturnData as String: true]
         // Executes query on keychain to retrieve credentials
         var item: CFTypeRef?
@@ -38,26 +39,18 @@ class NubankServices {
     /// - Parameters:
     ///   - username: nubank username
     ///   - password: nubank password
-    static func Login(username: String, password: String, success: (() -> Void)?, error: ((Error) -> Void)?) {
-        // First of all, always executes a delete query before saving a new password
-        let deleteQuery: [String: Any] = [kSecClass as String: kSecClassGenericPassword]
-        // Executes query on keychain to delete credentials
-        _ = SecItemDelete(deleteQuery as CFDictionary)
-        
-        // Creates the query to save the user access data on the keychain
-        let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
-                                    kSecAttrAccount as String: username,
-                                    kSecValueData as String: password.data(using: String.Encoding.utf8)!,
-                                    kSecAttrAccessGroup as String: "br.com.cadumillani.nubankDailyLimitWidget"]
-        // Saves the data
-        let status: OSStatus = SecItemAdd(query as CFDictionary, nil)
-        // Verifies the status of the write to the keychain
-        if status != errSecSuccess {
-            // Case of error throw it to the caller
-            error?(NubankPlannerError.keychainSavingError)
-        } else {
-            // No error, calls success handler
-            success?()
-        }
+    static func Login(cpf: String, password: String, success: (() -> Void)?, error: ((Error) -> Void)?) {
+        // Tries to login on the server
+        QueueManager.sharedInstance.execute(mechanism: {
+            _ = try NubankServer.shared.login(cpf: cpf, password: password)
+        }, success: success, error: error)
+    }
+    
+    /// Gets the total amount of money that was spent today.
+    ///
+    /// - Returns: return array of all purchases made this month
+    static func getAllPurchases(success: (([Purchase]) -> Void)?, error: ((Error) -> Void)?) {
+        // Executes the server mechanism to retrieve all purchases from the server
+        QueueManager.sharedInstance.execute(mechanism: NubankServer.shared.getAllPurchases, success: success, error: error)
     }
 }

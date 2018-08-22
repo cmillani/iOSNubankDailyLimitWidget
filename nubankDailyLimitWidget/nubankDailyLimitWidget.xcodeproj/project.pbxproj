@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		058AA400AE05528CCCDECF94 /* Pods_nubankDailyLimitWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848B3CB4E94FEF8C8C44FD2C /* Pods_nubankDailyLimitWidget.framework */; };
 		0716DF662128865500D67504 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716DF652128865500D67504 /* AppDelegate.swift */; };
 		0716DF682128865500D67504 /* ChooseLimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716DF672128865500D67504 /* ChooseLimitViewController.swift */; };
 		0716DF6B2128865500D67504 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0716DF692128865500D67504 /* Main.storyboard */; };
@@ -22,10 +23,32 @@
 		0716DF932129C37200D67504 /* DailyBudgetWidgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716DF922129C37200D67504 /* DailyBudgetWidgetController.swift */; };
 		0716DF962129C37200D67504 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0716DF942129C37200D67504 /* MainInterface.storyboard */; };
 		0716DF9A2129C37200D67504 /* budgetWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0716DF8D2129C37200D67504 /* budgetWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0761A0E2212DFCD400C91C66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0761A0E1212DFCD400C91C66 /* Constants.swift */; };
+		0761A0E4212DFD7300C91C66 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0761A0E3212DFD7300C91C66 /* UserDefaults+Extension.swift */; };
+		0761A0E5212DFE2900C91C66 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0761A0E3212DFD7300C91C66 /* UserDefaults+Extension.swift */; };
+		0761A0E6212DFE3200C91C66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0761A0E1212DFCD400C91C66 /* Constants.swift */; };
 		0769CEB92129C85B0035AC22 /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716DF7D21288B7C00D67504 /* Calendar+Extension.swift */; };
 		0769CEBA2129C8600035AC22 /* BudgetServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716DF7A21288B2900D67504 /* BudgetServices.swift */; };
 		0769CEBB2129C8600035AC22 /* NubankServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716DF7F2129B2C800D67504 /* NubankServices.swift */; };
 		0769CEBC2129C96D0035AC22 /* NubankPlannerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716DF812129B53300D67504 /* NubankPlannerError.swift */; };
+		0769CEC1212A11A60035AC22 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CEC0212A11A60035AC22 /* Purchase.swift */; };
+		0769CEC2212A12010035AC22 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CEC0212A11A60035AC22 /* Purchase.swift */; };
+		0769CEC4212A121E0035AC22 /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CEC3212A121E0035AC22 /* QueueManager.swift */; };
+		0769CEC7212A19070035AC22 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CEC6212A19070035AC22 /* URLSession+Extension.swift */; };
+		0769CEC8212A19710035AC22 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716DF852129BF4100D67504 /* UIViewController+Extension.swift */; };
+		0769CEC9212A19740035AC22 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CEC6212A19070035AC22 /* URLSession+Extension.swift */; };
+		0769CECA212A197B0035AC22 /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CEC3212A121E0035AC22 /* QueueManager.swift */; };
+		0769CECC212A20CD0035AC22 /* NubankServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CECB212A20CD0035AC22 /* NubankServer.swift */; };
+		0769CECD212A21050035AC22 /* NubankServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CECB212A20CD0035AC22 /* NubankServer.swift */; };
+		0769CECF212A218C0035AC22 /* HTTPRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CECE212A218C0035AC22 /* HTTPRequestManager.swift */; };
+		0769CED0212A40BD0035AC22 /* HTTPRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CECE212A218C0035AC22 /* HTTPRequestManager.swift */; };
+		0769CED4212B5D660035AC22 /* ResponseParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CED3212B5D660035AC22 /* ResponseParserManager.swift */; };
+		0769CED6212C3DDB0035AC22 /* RequestParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CED5212C3DDB0035AC22 /* RequestParserManager.swift */; };
+		0769CED7212C40CD0035AC22 /* ResponseParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CED3212B5D660035AC22 /* ResponseParserManager.swift */; };
+		0769CED8212C40CF0035AC22 /* RequestParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CED5212C3DDB0035AC22 /* RequestParserManager.swift */; };
+		0769CEDA212C4E630035AC22 /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CED9212C4E630035AC22 /* SessionData.swift */; };
+		0769CEDB212C4EB10035AC22 /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0769CED9212C4E630035AC22 /* SessionData.swift */; };
+		FBC67E0C0D6CFD085A5AF0C5 /* Pods_budgetWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F50A94534CE26D0D1DD706 /* Pods_budgetWidget.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +94,24 @@
 		0716DF922129C37200D67504 /* DailyBudgetWidgetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBudgetWidgetController.swift; sourceTree = "<group>"; };
 		0716DF952129C37200D67504 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		0716DF972129C37200D67504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0761A0E1212DFCD400C91C66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0761A0E3212DFD7300C91C66 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		0769CEBD2129CB0B0035AC22 /* nubankDailyLimitWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nubankDailyLimitWidget.entitlements; sourceTree = "<group>"; };
 		0769CEBE2129CB330035AC22 /* budgetWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = budgetWidget.entitlements; sourceTree = "<group>"; };
+		0769CEC0212A11A60035AC22 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		0769CEC3212A121E0035AC22 /* QueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
+		0769CEC6212A19070035AC22 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
+		0769CECB212A20CD0035AC22 /* NubankServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NubankServer.swift; sourceTree = "<group>"; };
+		0769CECE212A218C0035AC22 /* HTTPRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestManager.swift; sourceTree = "<group>"; };
+		0769CED3212B5D660035AC22 /* ResponseParserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParserManager.swift; sourceTree = "<group>"; };
+		0769CED5212C3DDB0035AC22 /* RequestParserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParserManager.swift; sourceTree = "<group>"; };
+		0769CED9212C4E630035AC22 /* SessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
+		13F50A94534CE26D0D1DD706 /* Pods_budgetWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_budgetWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37A4FB7CD831731F50CBD003 /* Pods-budgetWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-budgetWidget/Pods-budgetWidget.release.xcconfig"; sourceTree = "<group>"; };
+		848B3CB4E94FEF8C8C44FD2C /* Pods_nubankDailyLimitWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nubankDailyLimitWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E592C0DD37CBB14FB447FE9 /* Pods-budgetWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-budgetWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-budgetWidget/Pods-budgetWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		90067BDF6BC27C9E557FC03F /* Pods-nubankDailyLimitWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nubankDailyLimitWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-nubankDailyLimitWidget/Pods-nubankDailyLimitWidget.release.xcconfig"; sourceTree = "<group>"; };
+		DF66EE627B84683B484557EB /* Pods-nubankDailyLimitWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nubankDailyLimitWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nubankDailyLimitWidget/Pods-nubankDailyLimitWidget.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058AA400AE05528CCCDECF94 /* Pods_nubankDailyLimitWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0716DF902129C37200D67504 /* NotificationCenter.framework in Frameworks */,
+				FBC67E0C0D6CFD085A5AF0C5 /* Pods_budgetWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +138,8 @@
 		0716DF592128865500D67504 = {
 			isa = PBXGroup;
 			children = (
+				0761A0E1212DFCD400C91C66 /* Constants.swift */,
+				0769CEBF212A11990035AC22 /* Model */,
 				0716DF7921288A7F00D67504 /* Mechanisms */,
 				0716DF812129B53300D67504 /* NubankPlannerError.swift */,
 				0716DF7821288A7900D67504 /* Services */,
@@ -104,6 +147,7 @@
 				0716DF912129C37200D67504 /* budgetWidget */,
 				0716DF8E2129C37200D67504 /* Frameworks */,
 				0716DF632128865500D67504 /* Products */,
+				6152829A80608B2178E67483 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,7 +195,9 @@
 		0716DF7921288A7F00D67504 /* Mechanisms */ = {
 			isa = PBXGroup;
 			children = (
+				0769CEC5212A123C0035AC22 /* Server */,
 				0716DF7C21288B6D00D67504 /* Extensions */,
+				0769CEC3212A121E0035AC22 /* QueueManager.swift */,
 			);
 			path = Mechanisms;
 			sourceTree = "<group>";
@@ -161,6 +207,8 @@
 			children = (
 				0716DF7D21288B7C00D67504 /* Calendar+Extension.swift */,
 				0716DF852129BF4100D67504 /* UIViewController+Extension.swift */,
+				0769CEC6212A19070035AC22 /* URLSession+Extension.swift */,
+				0761A0E3212DFD7300C91C66 /* UserDefaults+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -169,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				0716DF8F2129C37200D67504 /* NotificationCenter.framework */,
+				13F50A94534CE26D0D1DD706 /* Pods_budgetWidget.framework */,
+				848B3CB4E94FEF8C8C44FD2C /* Pods_nubankDailyLimitWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,6 +234,37 @@
 			path = budgetWidget;
 			sourceTree = "<group>";
 		};
+		0769CEBF212A11990035AC22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0769CEC0212A11A60035AC22 /* Purchase.swift */,
+				0769CED9212C4E630035AC22 /* SessionData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0769CEC5212A123C0035AC22 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				0769CECB212A20CD0035AC22 /* NubankServer.swift */,
+				0769CECE212A218C0035AC22 /* HTTPRequestManager.swift */,
+				0769CED3212B5D660035AC22 /* ResponseParserManager.swift */,
+				0769CED5212C3DDB0035AC22 /* RequestParserManager.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		6152829A80608B2178E67483 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E592C0DD37CBB14FB447FE9 /* Pods-budgetWidget.debug.xcconfig */,
+				37A4FB7CD831731F50CBD003 /* Pods-budgetWidget.release.xcconfig */,
+				DF66EE627B84683B484557EB /* Pods-nubankDailyLimitWidget.debug.xcconfig */,
+				90067BDF6BC27C9E557FC03F /* Pods-nubankDailyLimitWidget.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,10 +272,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0716DF742128865700D67504 /* Build configuration list for PBXNativeTarget "nubankDailyLimitWidget" */;
 			buildPhases = (
+				EE6EE59200D34452A60E032A /* [CP] Check Pods Manifest.lock */,
 				0716DF5E2128865500D67504 /* Sources */,
 				0716DF5F2128865500D67504 /* Frameworks */,
 				0716DF602128865500D67504 /* Resources */,
 				0716DF9E2129C37200D67504 /* Embed App Extensions */,
+				881885BFD8F6A46509A6005D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +293,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0716DF9B2129C37200D67504 /* Build configuration list for PBXNativeTarget "budgetWidget" */;
 			buildPhases = (
+				EA151D5402C139099C52A3F9 /* [CP] Check Pods Manifest.lock */,
 				0716DF892129C37200D67504 /* Sources */,
 				0716DF8A2129C37200D67504 /* Frameworks */,
 				0716DF8B2129C37200D67504 /* Resources */,
@@ -236,6 +320,9 @@
 					0716DF612128865500D67504 = {
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -244,6 +331,9 @@
 					0716DF8C2129C37200D67504 = {
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -291,19 +381,86 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		881885BFD8F6A46509A6005D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-nubankDailyLimitWidget/Pods-nubankDailyLimitWidget-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-nubankDailyLimitWidget/Pods-nubankDailyLimitWidget-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA151D5402C139099C52A3F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-budgetWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE6EE59200D34452A60E032A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-nubankDailyLimitWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0716DF5E2128865500D67504 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0716DF862129BF4100D67504 /* UIViewController+Extension.swift in Sources */,
+				0761A0E2212DFCD400C91C66 /* Constants.swift in Sources */,
 				0716DF842129B8E000D67504 /* LoginViewController.swift in Sources */,
+				0769CEC1212A11A60035AC22 /* Purchase.swift in Sources */,
+				0769CECC212A20CD0035AC22 /* NubankServer.swift in Sources */,
+				0769CECF212A218C0035AC22 /* HTTPRequestManager.swift in Sources */,
 				0716DF802129B2C800D67504 /* NubankServices.swift in Sources */,
 				0716DF7B21288B2900D67504 /* BudgetServices.swift in Sources */,
+				0769CED4212B5D660035AC22 /* ResponseParserManager.swift in Sources */,
+				0769CEC4212A121E0035AC22 /* QueueManager.swift in Sources */,
 				0716DF7E21288B7C00D67504 /* Calendar+Extension.swift in Sources */,
+				0769CEDA212C4E630035AC22 /* SessionData.swift in Sources */,
 				0716DF682128865500D67504 /* ChooseLimitViewController.swift in Sources */,
+				0769CED6212C3DDB0035AC22 /* RequestParserManager.swift in Sources */,
 				0716DF822129B53300D67504 /* NubankPlannerError.swift in Sources */,
 				0716DF662128865500D67504 /* AppDelegate.swift in Sources */,
+				0761A0E4212DFD7300C91C66 /* UserDefaults+Extension.swift in Sources */,
+				0769CEC7212A19070035AC22 /* URLSession+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,10 +468,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0769CECA212A197B0035AC22 /* QueueManager.swift in Sources */,
+				0769CECD212A21050035AC22 /* NubankServer.swift in Sources */,
+				0769CEDB212C4EB10035AC22 /* SessionData.swift in Sources */,
 				0769CEBA2129C8600035AC22 /* BudgetServices.swift in Sources */,
 				0716DF932129C37200D67504 /* DailyBudgetWidgetController.swift in Sources */,
+				0769CED8212C40CF0035AC22 /* RequestParserManager.swift in Sources */,
+				0769CEC2212A12010035AC22 /* Purchase.swift in Sources */,
+				0761A0E6212DFE3200C91C66 /* Constants.swift in Sources */,
+				0769CED7212C40CD0035AC22 /* ResponseParserManager.swift in Sources */,
 				0769CEBC2129C96D0035AC22 /* NubankPlannerError.swift in Sources */,
+				0769CEC9212A19740035AC22 /* URLSession+Extension.swift in Sources */,
+				0769CEC8212A19710035AC22 /* UIViewController+Extension.swift in Sources */,
 				0769CEBB2129C8600035AC22 /* NubankServices.swift in Sources */,
+				0769CED0212A40BD0035AC22 /* HTTPRequestManager.swift in Sources */,
+				0761A0E5212DFE2900C91C66 /* UserDefaults+Extension.swift in Sources */,
 				0769CEB92129C85B0035AC22 /* Calendar+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,8 +641,9 @@
 		};
 		0716DF752128865700D67504 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF66EE627B84683B484557EB /* Pods-nubankDailyLimitWidget.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = nubankDailyLimitWidget/nubankDailyLimitWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -493,8 +662,9 @@
 		};
 		0716DF762128865700D67504 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90067BDF6BC27C9E557FC03F /* Pods-nubankDailyLimitWidget.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = nubankDailyLimitWidget/nubankDailyLimitWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -513,6 +683,7 @@
 		};
 		0716DF9C2129C37200D67504 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E592C0DD37CBB14FB447FE9 /* Pods-budgetWidget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = budgetWidget/budgetWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -533,6 +704,7 @@
 		};
 		0716DF9D2129C37200D67504 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37A4FB7CD831731F50CBD003 /* Pods-budgetWidget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = budgetWidget/budgetWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;

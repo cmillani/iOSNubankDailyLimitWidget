@@ -64,7 +64,7 @@ extension LoginViewController {
                 return
             }
             
-            NubankServices.Login(username: username, password: password, success: {
+            NubankServices.Login(cpf: username, password: password, success: {
                 // On Success, return to previous controller
                 self.dismiss(animated: true, completion: nil)
             }, error: { error in

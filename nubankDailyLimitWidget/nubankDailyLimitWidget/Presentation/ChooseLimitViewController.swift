@@ -49,7 +49,7 @@ extension ChooseLimitViewController: UITextFieldDelegate {
             if textField == monthlyLimitField {
                 BudgetServices.updateMonthlyLimit(doubleValue)
             } else {
-                BudgetServices.updateMonthlyLimit(doubleValue * Double(Calendar.daysInCurrentMonth()))
+                BudgetServices.updateMonthlyLimit(doubleValue * Double(Calendar.current.daysInCurrentMonth()))
             }
             // Reloads the UI with new data
             self.setupData()
@@ -84,7 +84,7 @@ extension ChooseLimitViewController {
         if let unwrappedLimit = self.currentLimit {
             // Setup fields with previous limit
             self.monthlyLimitField.text = String(unwrappedLimit)
-            self.dailyLimitField.text = String(unwrappedLimit / Double(Calendar.daysInCurrentMonth()))
+            self.dailyLimitField.text = String(unwrappedLimit / Double(Calendar.current.daysInCurrentMonth()))
         }
     }
     

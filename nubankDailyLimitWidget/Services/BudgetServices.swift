@@ -12,14 +12,14 @@ class BudgetServices {
     
     // Private init to avoid initializations for this static class
     private init () { }
-    private static let limitUserDefaultsKey: String = "MONTHLY_LIMIT_KEY"
 
     /// Updates the current monthly limit for the user
     ///
     /// - Parameter limit: new monthly limit
     static func updateMonthlyLimit(_ limit: Double) {
         // Uses user defaults to save double limit
-        UserDefaults.standard.set(limit, forKey: limitUserDefaultsKey)
+        UserDefaults.widgetSharedUserDefaults().set(limit, forKey: Constants.UserDefaults.monthlyLimitKey)
+        UserDefaults.widgetSharedUserDefaults().synchronize()
     }
     
     
@@ -28,6 +28,6 @@ class BudgetServices {
     /// - Returns: the limit or nil if none set
     static func getMonthlyLimit() -> Double? {
         // Retrieves saved limit from user defauts
-        return UserDefaults.standard.value(forKey: limitUserDefaultsKey) as? Double
+        return UserDefaults.widgetSharedUserDefaults().value(forKey: Constants.UserDefaults.monthlyLimitKey) as? Double
     }
 }

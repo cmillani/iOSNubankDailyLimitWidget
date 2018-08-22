@@ -10,4 +10,10 @@ import Foundation
 
 enum NubankPlannerError: Error {
     case keychainSavingError
+    case keychainNotFound
+    
+    case authError
+    case emptyResponse
+    case serverErrorWithInvalidRequestOrResponse
+    case serverErrorStatusCode(httpCode: Int)
 }
