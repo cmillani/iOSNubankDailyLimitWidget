@@ -27,6 +27,11 @@
 		0761A0E4212DFD7300C91C66 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0761A0E3212DFD7300C91C66 /* UserDefaults+Extension.swift */; };
 		0761A0E5212DFE2900C91C66 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0761A0E3212DFD7300C91C66 /* UserDefaults+Extension.swift */; };
 		0761A0E6212DFE3200C91C66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0761A0E1212DFCD400C91C66 /* Constants.swift */; };
+		0761A0E9212EFBBA00C91C66 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0761A0E8212EFBBA00C91C66 /* Budget.swift */; };
+		0761A0EA212EFBBA00C91C66 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0761A0E8212EFBBA00C91C66 /* Budget.swift */; };
+		0761A0EB212F4BF200C91C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0716DF6C2128865700D67504 /* Assets.xcassets */; };
+		0761A0F0212F7A7600C91C66 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0761A0EF212F7A7600C91C66 /* Double+Extension.swift */; };
+		0761A0F1212F7A7600C91C66 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0761A0EF212F7A7600C91C66 /* Double+Extension.swift */; };
 		0769CEB92129C85B0035AC22 /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716DF7D21288B7C00D67504 /* Calendar+Extension.swift */; };
 		0769CEBA2129C8600035AC22 /* BudgetServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716DF7A21288B2900D67504 /* BudgetServices.swift */; };
 		0769CEBB2129C8600035AC22 /* NubankServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716DF7F2129B2C800D67504 /* NubankServices.swift */; };
@@ -96,6 +101,8 @@
 		0716DF972129C37200D67504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0761A0E1212DFCD400C91C66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0761A0E3212DFD7300C91C66 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		0761A0E8212EFBBA00C91C66 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		0761A0EF212F7A7600C91C66 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		0769CEBD2129CB0B0035AC22 /* nubankDailyLimitWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nubankDailyLimitWidget.entitlements; sourceTree = "<group>"; };
 		0769CEBE2129CB330035AC22 /* budgetWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = budgetWidget.entitlements; sourceTree = "<group>"; };
 		0769CEC0212A11A60035AC22 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
@@ -138,11 +145,7 @@
 		0716DF592128865500D67504 = {
 			isa = PBXGroup;
 			children = (
-				0761A0E1212DFCD400C91C66 /* Constants.swift */,
-				0769CEBF212A11990035AC22 /* Model */,
-				0716DF7921288A7F00D67504 /* Mechanisms */,
-				0716DF812129B53300D67504 /* NubankPlannerError.swift */,
-				0716DF7821288A7900D67504 /* Services */,
+				0761A0E7212EFA0600C91C66 /* Shared */,
 				0716DF642128865500D67504 /* nubankDailyLimitWidget */,
 				0716DF912129C37200D67504 /* budgetWidget */,
 				0716DF8E2129C37200D67504 /* Frameworks */,
@@ -209,6 +212,7 @@
 				0716DF852129BF4100D67504 /* UIViewController+Extension.swift */,
 				0769CEC6212A19070035AC22 /* URLSession+Extension.swift */,
 				0761A0E3212DFD7300C91C66 /* UserDefaults+Extension.swift */,
+				0761A0EF212F7A7600C91C66 /* Double+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -234,11 +238,24 @@
 			path = budgetWidget;
 			sourceTree = "<group>";
 		};
+		0761A0E7212EFA0600C91C66 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0761A0E1212DFCD400C91C66 /* Constants.swift */,
+				0769CEBF212A11990035AC22 /* Model */,
+				0716DF7921288A7F00D67504 /* Mechanisms */,
+				0716DF812129B53300D67504 /* NubankPlannerError.swift */,
+				0716DF7821288A7900D67504 /* Services */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		0769CEBF212A11990035AC22 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0769CEC0212A11A60035AC22 /* Purchase.swift */,
 				0769CED9212C4E630035AC22 /* SessionData.swift */,
+				0761A0E8212EFBBA00C91C66 /* Budget.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,6 +392,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0761A0EB212F4BF200C91C66 /* Assets.xcassets in Resources */,
 				0716DF962129C37200D67504 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,9 +469,11 @@
 				0769CECF212A218C0035AC22 /* HTTPRequestManager.swift in Sources */,
 				0716DF802129B2C800D67504 /* NubankServices.swift in Sources */,
 				0716DF7B21288B2900D67504 /* BudgetServices.swift in Sources */,
+				0761A0F0212F7A7600C91C66 /* Double+Extension.swift in Sources */,
 				0769CED4212B5D660035AC22 /* ResponseParserManager.swift in Sources */,
 				0769CEC4212A121E0035AC22 /* QueueManager.swift in Sources */,
 				0716DF7E21288B7C00D67504 /* Calendar+Extension.swift in Sources */,
+				0761A0E9212EFBBA00C91C66 /* Budget.swift in Sources */,
 				0769CEDA212C4E630035AC22 /* SessionData.swift in Sources */,
 				0716DF682128865500D67504 /* ChooseLimitViewController.swift in Sources */,
 				0769CED6212C3DDB0035AC22 /* RequestParserManager.swift in Sources */,
@@ -470,6 +490,7 @@
 			files = (
 				0769CECA212A197B0035AC22 /* QueueManager.swift in Sources */,
 				0769CECD212A21050035AC22 /* NubankServer.swift in Sources */,
+				0761A0F1212F7A7600C91C66 /* Double+Extension.swift in Sources */,
 				0769CEDB212C4EB10035AC22 /* SessionData.swift in Sources */,
 				0769CEBA2129C8600035AC22 /* BudgetServices.swift in Sources */,
 				0716DF932129C37200D67504 /* DailyBudgetWidgetController.swift in Sources */,
@@ -479,6 +500,7 @@
 				0769CED7212C40CD0035AC22 /* ResponseParserManager.swift in Sources */,
 				0769CEBC2129C96D0035AC22 /* NubankPlannerError.swift in Sources */,
 				0769CEC9212A19740035AC22 /* URLSession+Extension.swift in Sources */,
+				0761A0EA212EFBBA00C91C66 /* Budget.swift in Sources */,
 				0769CEC8212A19710035AC22 /* UIViewController+Extension.swift in Sources */,
 				0769CEBB2129C8600035AC22 /* NubankServices.swift in Sources */,
 				0769CED0212A40BD0035AC22 /* HTTPRequestManager.swift in Sources */,

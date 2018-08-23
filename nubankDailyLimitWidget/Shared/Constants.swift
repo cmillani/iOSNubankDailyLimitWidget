@@ -15,6 +15,7 @@ struct Constants {
         static let sharedSuiteName: String = "group.nubankPlanner"
         static let monthlyLimitKey: String = "MONTHLY_LIMIT_KEY"
         static let loginUrlKey: String = "LOGIN_URL_KEY"
+        static let cachedBudgetKey: String = "CACHED_BUDGET_KEY"
     }
     
     /// Keychain constants
@@ -23,5 +24,7 @@ struct Constants {
         static let proxyPathAttribute: String = "api/proxy"
         static let sharedAccessGroup: String = "WUMTT3EPGZ.br.com.cadumillani.nubankDailyLimitWidget"
     }
+    
+    static let budgetCacheValidityInSeconds: Double = 60 * 5
     
 }

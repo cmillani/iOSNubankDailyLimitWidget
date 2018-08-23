@@ -15,6 +15,10 @@ class DailyBudgetWidgetController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var todaysLimitLabel: UILabel!
     @IBOutlet weak var thisMonthLimitLabel: UILabel!
     @IBOutlet weak var limitsStackView: UIStackView!
+    @IBOutlet weak var dailyBudgetBarView: UIView!
+    @IBOutlet weak var monthlyBudgetBarView: UIView!
+    @IBOutlet weak var dailyBudgetBarDistanceToTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var monthlyBudgetBarDistanceToTopConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,83 +26,57 @@ class DailyBudgetWidgetController: UIViewController, NCWidgetProviding {
     }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        
-        completionHandler(NCUpdateResult.newData)
+        // Tries to retrieve data form the server
+        BudgetServices.getThisMonthRamainingBudget(success: { budget in
+            if budget.expirationDate > Date() {
+                // Data still valid, no need to update
+                completionHandler(NCUpdateResult.noData)
+            } else {
+                // Expired data, need to recalculate and update UI
+                completionHandler(NCUpdateResult.newData)
+            }
+        }, error: { error in
+            // Error received
+            completionHandler(NCUpdateResult.failed)
+        })
     }
     
+    func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        // All insets are configures in the storyboard, so we remove all system default insets
+        return UIEdgeInsets.zero
+    }
 }
 
 // MARK: - Private Methods
 
 extension DailyBudgetWidgetController {
+    
+    /// Setup screen with adequate data
     private func setupUIData() {
-        // First of all, searches for a valid nubank session
-        if !NubankServices.IsValidSession() {
-            // No session available, indicates that the user needs to open the app in order to configure that
-            self.performSetupButton.isHidden = false
+        // To avoid showing placeholder information from the storyboard, clears all labels
+        self.todaysLimitLabel.text = ""
+        self.thisMonthLimitLabel.text = ""
+        // By default, hides the error button
+        self.performSetupButton.isHidden = true
+        // Tries to retrieve valid budget data
+        BudgetServices.getThisMonthRamainingBudget(success: { budget in
+            // Could retrieve data, formats and shows relevant data
+            self.todaysLimitLabel.text = budget.dailyRemainings.toCurrency()
+            self.thisMonthLimitLabel.text = budget.monthlyRemainings.toCurrency()
+            
+            // Calculates the custom progress bar constraint to indicate how much can still be spent.
+            // The constraint is from the top of the mutating view to the top of the container view
+            // Calculating the remainings/budget indicates the progress, so subtracting it from one indicates the empty space (that is what the constraint controls), and then we can multiply it by the height of the view to obtain the contraint constant
+            self.monthlyBudgetBarDistanceToTopConstraint.constant = CGFloat(1 - (budget.monthlyRemainings / budget.monthlyBudget)) * self.monthlyBudgetBarView.frame.height
+            self.dailyBudgetBarDistanceToTopConstraint.constant = CGFloat(1 - (budget.dailyRemainings / budget.dailyBudget)) * self.dailyBudgetBarView.frame.height
+            
+            // Updates constraints
+            self.view.layoutIfNeeded()
+        }, error: { error in
+            // Could not retrieve data, hides the budgets labels
             self.limitsStackView.isHidden = true
-        } else {
-            // There is a session, look for a selected monthly limit
-            if let monthlyBudget: Double = BudgetServices.getMonthlyLimit() {
-                self.setupExpensesLabels(monthlyBudget: monthlyBudget)
-            } else {
-                // If there is no monthly limit saved on the application, indicates to the user that it must select one in the application
-                self.limitsStackView.isHidden = true
-                self.performSetupButton.setTitle("Hey, me fala o seu limite!", for: .normal)
-                self.performSetupButton.isHidden = false
-            }
-        }
-    }
-    
-    /// Setups the expenses views
-    ///
-    /// - Parameter monthlyBudget: budget for this month
-    private func setupExpensesLabels(monthlyBudget: Double) {
-        // Tries to get all expenses from the server
-        NubankServices.getAllPurchases(success: { (purchases) in
-            // All information available, calculate remaining budget
-            self.todaysLimitLabel.text = String((monthlyBudget / Double(Calendar.current.daysInCurrentMonth())) - self.getAllSpentToday(from: purchases))
-            self.thisMonthLimitLabel.text = String(monthlyBudget - self.getAllSpentThisMonth(from: purchases))
-        }) { (error) in
-            // Error while getting expenses from server, notify user
-            self.limitsStackView.isHidden = true
-            self.performSetupButton.setTitle("Deu ruim parça :/", for: .normal)
+            // Shows the error label
             self.performSetupButton.isHidden = false
-        }
-        
-    }
-    
-    /// From an array of expenses, gets the total spent on the current month
-    ///
-    /// - Parameter purchases: array of expenses to be looked at
-    /// - Returns: total expent this month
-    private func getAllSpentThisMonth(from purchases: [Purchase]) -> Double {
-        // Filters all expenses from this month and reduces the value to a single double value
-        return purchases.filter({
-            // Compare the months of the purchase and the current month
-            let dateComponents: DateComponents = Calendar.current.dateComponents([.year, .month], from: $0.date)
-            let currentDateComponents: DateComponents = Calendar.current.dateComponents([.year, .month], from: Date())
-            // Filter only purchases from this month
-            return dateComponents.year == currentDateComponents.year && dateComponents.month == currentDateComponents.month
-        }).reduce(0.0, {$0 + $1.value})
-    }
-    
-    /// From an array of expenses, gets the total spent on the current date
-    ///
-    /// - Parameter purchases: array of expenses to be looked at
-    /// - Returns: total expent today
-    func getAllSpentToday(from purchases: [Purchase]) -> Double {
-        return purchases.filter({
-            // Compare the day of the purchase and today
-            let dateComponents: DateComponents = Calendar.current.dateComponents([.year, .month, .day], from: $0.date)
-            let currentDateComponents: DateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-            // Filter only purchases from today
-            return dateComponents.year == currentDateComponents.year && dateComponents.month == currentDateComponents.month && dateComponents.day == currentDateComponents.day
-        }).reduce(0.0, {$0 + $1.value})
+        })
     }
 }

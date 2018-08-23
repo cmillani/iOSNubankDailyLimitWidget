@@ -16,4 +16,6 @@ enum NubankPlannerError: Error {
     case emptyResponse
     case serverErrorWithInvalidRequestOrResponse
     case serverErrorStatusCode(httpCode: Int)
+    
+    case noBudgetSet
 }

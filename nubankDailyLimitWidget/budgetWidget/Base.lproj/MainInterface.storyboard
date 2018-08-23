@@ -16,63 +16,98 @@
             <objects>
                 <viewController id="M4Y-Lb-cyx" customClass="DailyBudgetWidgetController" customModule="budgetWidget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e86-V5-epX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oM3-b1-N6M">
-                                        <rect key="frame" x="0.0" y="0.0" width="159.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="110"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2T-Qa-xKV">
-                                                <rect key="frame" x="63" y="2" width="35" height="20.5"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTANTE HOJE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2T-Qa-xKV">
+                                                <rect key="frame" x="29" y="51.5" width="87.5" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                                                <color key="textColor" name="CustomMediumGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iM3-P5-NZM">
-                                                <rect key="frame" x="57.5" y="29.5" width="44.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="26" y="65" width="108" height="27.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <color key="textColor" name="CustomLightBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALy-2o-eEf" userLabel="CustomProgressBar">
+                                                <rect key="frame" x="151" y="51.5" width="5" height="41"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6m-lt-XOB">
+                                                        <rect key="frame" x="0.0" y="21" width="5" height="20"/>
+                                                        <color key="backgroundColor" name="CustomLightBlue"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" name="CustomOrange"/>
+                                                <constraints>
+                                                    <constraint firstItem="j6m-lt-XOB" firstAttribute="leading" secondItem="ALy-2o-eEf" secondAttribute="leading" id="E0l-Je-4Qo"/>
+                                                    <constraint firstItem="j6m-lt-XOB" firstAttribute="top" secondItem="ALy-2o-eEf" secondAttribute="top" constant="21" id="QuH-aG-ity"/>
+                                                    <constraint firstAttribute="bottom" secondItem="j6m-lt-XOB" secondAttribute="bottom" id="pjf-uu-ZWg"/>
+                                                    <constraint firstItem="j6m-lt-XOB" firstAttribute="centerX" secondItem="ALy-2o-eEf" secondAttribute="centerX" id="rj0-hd-s6r"/>
+                                                    <constraint firstAttribute="trailing" secondItem="j6m-lt-XOB" secondAttribute="trailing" id="wnw-ZF-j3g"/>
+                                                    <constraint firstAttribute="width" constant="5" id="ydD-wV-CX8"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="iM3-P5-NZM" firstAttribute="top" secondItem="j2T-Qa-xKV" secondAttribute="bottom" constant="7" id="7m5-SX-uM9"/>
-                                            <constraint firstItem="j2T-Qa-xKV" firstAttribute="top" secondItem="oM3-b1-N6M" secondAttribute="top" constant="2" id="I54-GD-grW"/>
+                                            <constraint firstItem="iM3-P5-NZM" firstAttribute="top" secondItem="j2T-Qa-xKV" secondAttribute="bottom" id="7m5-SX-uM9"/>
                                             <constraint firstItem="iM3-P5-NZM" firstAttribute="centerX" secondItem="oM3-b1-N6M" secondAttribute="centerX" id="XmQ-sM-wsQ"/>
-                                            <constraint firstItem="j2T-Qa-xKV" firstAttribute="centerX" secondItem="iM3-P5-NZM" secondAttribute="centerX" id="bt2-gg-dfU"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFw-wG-zgt" userLabel="Spacer">
-                                        <rect key="frame" x="159.5" y="0.0" width="1" height="60"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="1" id="9zV-ZM-LTi"/>
+                                            <constraint firstItem="ALy-2o-eEf" firstAttribute="bottom" secondItem="iM3-P5-NZM" secondAttribute="bottom" id="bhw-uz-hde"/>
+                                            <constraint firstItem="ALy-2o-eEf" firstAttribute="top" secondItem="j2T-Qa-xKV" secondAttribute="top" id="bjz-0g-RrL"/>
+                                            <constraint firstAttribute="bottom" secondItem="iM3-P5-NZM" secondAttribute="bottom" constant="18" id="cVE-a3-IxB"/>
+                                            <constraint firstItem="j2T-Qa-xKV" firstAttribute="leading" secondItem="oM3-b1-N6M" secondAttribute="leading" constant="29" id="tNL-kE-2DE"/>
+                                            <constraint firstItem="iM3-P5-NZM" firstAttribute="leading" secondItem="oM3-b1-N6M" secondAttribute="leading" constant="26" id="wZP-BE-qf2"/>
+                                            <constraint firstAttribute="trailing" secondItem="ALy-2o-eEf" secondAttribute="trailing" constant="4" id="xyr-lR-erX"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Yd-Pe-H65">
-                                        <rect key="frame" x="160.5" y="0.0" width="159.5" height="60"/>
+                                        <rect key="frame" x="160" y="0.0" width="160" height="110"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Este Mes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suG-mA-WAf">
-                                                <rect key="frame" x="45" y="2" width="70" height="20.5"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTANTE MÊS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suG-mA-WAf">
+                                                <rect key="frame" x="29" y="51" width="82" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                                                <color key="textColor" name="CustomMediumGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jc-W4-Gy7">
-                                                <rect key="frame" x="61" y="29.5" width="38.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="26" y="64.5" width="53" height="27.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <color key="textColor" name="CustomGreen"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vR3-YY-TR8">
+                                                <rect key="frame" x="131" y="51" width="5" height="41"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54w-Ix-WuW">
+                                                        <rect key="frame" x="0.0" y="20.5" width="5" height="20.5"/>
+                                                        <color key="backgroundColor" name="CustomGreen"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" name="CustomRed"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="5" id="1hh-X4-bsF"/>
+                                                    <constraint firstItem="54w-Ix-WuW" firstAttribute="top" secondItem="vR3-YY-TR8" secondAttribute="top" constant="21" id="Jd4-Uo-D5Z"/>
+                                                    <constraint firstAttribute="bottom" secondItem="54w-Ix-WuW" secondAttribute="bottom" id="Vm2-Zq-DQG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="54w-Ix-WuW" secondAttribute="trailing" id="eh3-08-pQn"/>
+                                                    <constraint firstItem="54w-Ix-WuW" firstAttribute="leading" secondItem="vR3-YY-TR8" secondAttribute="leading" id="uqp-Ok-AEd"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="1jc-W4-Gy7" firstAttribute="top" secondItem="suG-mA-WAf" secondAttribute="bottom" constant="7" id="Qd2-3h-nLj"/>
-                                            <constraint firstItem="suG-mA-WAf" firstAttribute="centerX" secondItem="1jc-W4-Gy7" secondAttribute="centerX" id="bnZ-bI-Iuq"/>
-                                            <constraint firstItem="suG-mA-WAf" firstAttribute="top" secondItem="3Yd-Pe-H65" secondAttribute="top" constant="2" id="dne-an-2r6"/>
-                                            <constraint firstItem="1jc-W4-Gy7" firstAttribute="centerX" secondItem="3Yd-Pe-H65" secondAttribute="centerX" id="zFs-fH-pOa"/>
+                                            <constraint firstItem="suG-mA-WAf" firstAttribute="leading" secondItem="3Yd-Pe-H65" secondAttribute="leading" constant="29" id="2sx-dT-BDN"/>
+                                            <constraint firstItem="vR3-YY-TR8" firstAttribute="top" secondItem="suG-mA-WAf" secondAttribute="top" id="H6j-YG-sHt"/>
+                                            <constraint firstItem="vR3-YY-TR8" firstAttribute="bottom" secondItem="1jc-W4-Gy7" secondAttribute="bottom" id="PMd-S4-1p9"/>
+                                            <constraint firstItem="1jc-W4-Gy7" firstAttribute="top" secondItem="suG-mA-WAf" secondAttribute="bottom" id="Qd2-3h-nLj"/>
+                                            <constraint firstAttribute="bottom" secondItem="1jc-W4-Gy7" secondAttribute="bottom" constant="18" id="qdS-Nv-Z4d"/>
+                                            <constraint firstItem="1jc-W4-Gy7" firstAttribute="leading" secondItem="3Yd-Pe-H65" secondAttribute="leading" constant="26" id="qwP-e8-Jfu"/>
+                                            <constraint firstAttribute="trailing" secondItem="vR3-YY-TR8" secondAttribute="trailing" constant="24" id="w5O-6W-fam"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -81,13 +116,13 @@
                                 </constraints>
                             </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idk-jS-azM">
-                                <rect key="frame" x="-7" y="15" width="334" height="30"/>
-                                <state key="normal" title="Deu ruim! Abra o app :)">
-                                    <color key="titleColor" name="customRed"/>
+                                <rect key="frame" x="-7" y="40" width="334" height="30"/>
+                                <state key="normal" title="Erro ao carregar informações">
+                                    <color key="titleColor" name="CustomRed"/>
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="CustomDarkBlue"/>
                         <constraints>
                             <constraint firstItem="idk-jS-azM" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" id="3qH-zE-nQt"/>
                             <constraint firstItem="e86-V5-epX" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" id="PqC-A6-ebr"/>
@@ -102,9 +137,13 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="60"/>
+                    <size key="freeformSize" width="320" height="110"/>
                     <connections>
+                        <outlet property="dailyBudgetBarDistanceToTopConstraint" destination="QuH-aG-ity" id="svt-IU-ae9"/>
+                        <outlet property="dailyBudgetBarView" destination="ALy-2o-eEf" id="7wj-iK-J92"/>
                         <outlet property="limitsStackView" destination="e86-V5-epX" id="SJq-YA-qcq"/>
+                        <outlet property="monthlyBudgetBarDistanceToTopConstraint" destination="Jd4-Uo-D5Z" id="hNI-FD-T0X"/>
+                        <outlet property="monthlyBudgetBarView" destination="vR3-YY-TR8" id="aR1-pB-Z3R"/>
                         <outlet property="performSetupButton" destination="idk-jS-azM" id="3w8-cq-vXH"/>
                         <outlet property="thisMonthLimitLabel" destination="1jc-W4-Gy7" id="vvK-Ft-ze7"/>
                         <outlet property="todaysLimitLabel" destination="iM3-P5-NZM" id="XkL-lR-2lI"/>
@@ -115,8 +154,23 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="customRed">
-            <color red="0.99199998379999998" green="0.1840000004" blue="0.35699999329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="CustomDarkBlue">
+            <color red="0.11764705882352941" green="0.13725490196078433" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomGreen">
+            <color red="0.61176470588235299" green="0.79607843137254897" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomLightBlue">
+            <color red="0.32941176470588235" green="0.72549019607843135" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomMediumGray">
+            <color red="0.76078431372549016" green="0.76078431372549016" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomOrange">
+            <color red="0.98039215686274506" green="0.60392156862745094" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomRed">
+            <color red="0.88235294117647056" green="0.38039215686274508" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

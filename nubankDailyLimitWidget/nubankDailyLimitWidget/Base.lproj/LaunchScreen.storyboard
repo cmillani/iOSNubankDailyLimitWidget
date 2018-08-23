@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,17 +19,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planejador Nubank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uv2-hO-Ba6">
-                                <rect key="frame" x="81.5" y="328" width="212" height="31.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyf-z4-gEC">
+                                <rect key="frame" x="142.5" y="254" width="89" height="119"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ls3-J0-KeL">
+                                        <rect key="frame" x="16.5" y="0.0" width="56" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="74" id="Vac-yz-qU8"/>
+                                            <constraint firstAttribute="width" constant="56" id="iep-Dn-9ES"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plannerText" translatesAutoresizingMaskIntoConstraints="NO" id="SN5-WL-imZ">
+                                        <rect key="frame" x="0.0" y="83" width="89" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="89" id="IFq-bt-n52"/>
+                                            <constraint firstAttribute="height" constant="36" id="fV6-Xx-I3n"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="SN5-WL-imZ" secondAttribute="bottom" id="37Z-3v-agf"/>
+                                    <constraint firstItem="SN5-WL-imZ" firstAttribute="width" secondItem="wyf-z4-gEC" secondAttribute="width" id="JgK-ZN-P2F"/>
+                                    <constraint firstItem="SN5-WL-imZ" firstAttribute="centerX" secondItem="wyf-z4-gEC" secondAttribute="centerX" id="n8v-yS-9cR"/>
+                                    <constraint firstItem="SN5-WL-imZ" firstAttribute="top" secondItem="Ls3-J0-KeL" secondAttribute="bottom" constant="9" id="ntf-nd-cLt"/>
+                                    <constraint firstItem="Ls3-J0-KeL" firstAttribute="top" secondItem="wyf-z4-gEC" secondAttribute="top" id="qSC-de-a97"/>
+                                    <constraint firstItem="Ls3-J0-KeL" firstAttribute="centerX" secondItem="wyf-z4-gEC" secondAttribute="centerX" id="roR-F1-UmD"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="CustomBlue"/>
                         <constraints>
-                            <constraint firstItem="Uv2-hO-Ba6" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="VVS-f6-Oac"/>
-                            <constraint firstItem="Uv2-hO-Ba6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Yxv-u9-fCU"/>
+                            <constraint firstItem="wyf-z4-gEC" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-30" id="9jR-4M-h7G"/>
+                            <constraint firstItem="wyf-z4-gEC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wfA-4l-C4I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +60,11 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PLogo" width="58" height="76"/>
+        <image name="plannerText" width="89" height="36"/>
+        <namedColor name="CustomBlue">
+            <color red="0.21568627450980393" green="0.2627450980392157" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

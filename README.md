@@ -12,4 +12,5 @@ Based on expenses patters from the history, preview every-month expenses and tak
 ### Savings folders
 Using the savings account, categorize deposits and withdraws into user created folders, and even have presets of folders to make saving and user milestones/projects easier
 
-
+# Design
+Special thanks to [Daniel Motta](https://danielmots.dribbble.com) for bringing a fabulous design to the app ❤️ (Still replacing my screen with his!)
