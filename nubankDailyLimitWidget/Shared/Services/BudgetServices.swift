@@ -35,7 +35,7 @@ class BudgetServices {
     /// - Parameters:
     ///   - success: called with valid, newly calculated budget data
     ///   - error: if any server or system error occurs, this function is called with the error
-    static func calculateThisMonthRemainingBudget(success: ((Budget) -> Void)?, error: ((Error) -> Void)?) {
+    static func recalculateThisMonthRemainingBudget(success: ((Budget) -> Void)?, error: ((Error) -> Void)?) {
         // Executes server queries and calculations in a background queue and returns on the main thread
         QueueManager.sharedInstance.execute(mechanism: {
             return try recalculateThisMonthBudgets()
@@ -51,12 +51,17 @@ class BudgetServices {
         QueueManager.sharedInstance.execute(mechanism: {
             // Tries to retrieve cahced data
             guard let cachedBudgetData: Data = UserDefaults.widgetSharedUserDefaults().object(forKey: Constants.UserDefaults.cachedBudgetKey) as? Data,
-                let cachedBudget: Budget = try? JSONDecoder().decode(Budget.self, from: cachedBudgetData), // Tries to parse data into budget object
-                cachedBudget.expirationDate >= Date() // Validates the cache expiration of this budget calculation
+                let cachedBudget: Budget = try? JSONDecoder().decode(Budget.self, from: cachedBudgetData) // Tries to parse data into budget object
             else {
                 // If any of the conditions above is not ok, recalculates the budget and returns it
                 return try recalculateThisMonthBudgets()
             }
+            
+            if cachedBudget.expirationDate <= Date() { // Validates the cache expiration of this budget calculation
+                // If the value is invalid, will return the same way but triggers an update already, with the success validadion
+                self.recalculateThisMonthRemainingBudget(success: success, error: nil)
+            }
+            
             // Could retrieve cached budget, returns it
             return cachedBudget
         }, success: success, error: error)

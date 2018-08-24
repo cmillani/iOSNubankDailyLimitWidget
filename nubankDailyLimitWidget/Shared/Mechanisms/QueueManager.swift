@@ -85,7 +85,7 @@ class QueueManager {
         }
         
         // Execute block in background thread
-        self.executeBlock(blockForExecutionInBackground, queueType: .serial)
+        self.executeBlock(blockForExecutionInBackground, queueType: .concurrent)
     }
     
 
@@ -113,6 +113,6 @@ class QueueManager {
         }
         
         // Execute block in background thread
-        self.executeBlock(blockForExecutionInBackground, queueType: .serial)
+        self.executeBlock(blockForExecutionInBackground, queueType: .concurrent)
     }
 }

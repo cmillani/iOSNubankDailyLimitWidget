@@ -56,13 +56,18 @@ extension DailyBudgetWidgetController {
         // To avoid showing placeholder information from the storyboard, clears all labels
         self.todaysLimitLabel.text = ""
         self.thisMonthLimitLabel.text = ""
-        // By default, hides the error button
-        self.performSetupButton.isHidden = true
         // Tries to retrieve valid budget data
         BudgetServices.getThisMonthRamainingBudget(success: { budget in
+            // hides the error button
+            self.performSetupButton.isHidden = true
+            // shows values labels
+            self.limitsStackView.isHidden = false
             // Could retrieve data, formats and shows relevant data
             self.todaysLimitLabel.text = budget.dailyRemainings.toCurrency()
             self.thisMonthLimitLabel.text = budget.monthlyRemainings.toCurrency()
+            
+            // Force all updates
+            self.view.layoutIfNeeded()
             
             // Calculates the custom progress bar constraint to indicate how much can still be spent.
             // The constraint is from the top of the mutating view to the top of the container view
@@ -70,8 +75,11 @@ extension DailyBudgetWidgetController {
             self.monthlyBudgetBarDistanceToTopConstraint.constant = CGFloat(1 - (budget.monthlyRemainings / budget.monthlyBudget)) * self.monthlyBudgetBarView.frame.height
             self.dailyBudgetBarDistanceToTopConstraint.constant = CGFloat(1 - (budget.dailyRemainings / budget.dailyBudget)) * self.dailyBudgetBarView.frame.height
             
-            // Updates constraints
-            self.view.layoutIfNeeded()
+            // Updates constraints, animating
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view.layoutIfNeeded()
+            })
+            
         }, error: { error in
             // Could not retrieve data, hides the budgets labels
             self.limitsStackView.isHidden = true
